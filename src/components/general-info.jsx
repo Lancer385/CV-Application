@@ -1,21 +1,5 @@
-import { cvData } from "../utils/cv-data";
-import { useImmer } from "use-immer";
-import { useState } from "react";
 import Input from "./inputs";
-function GeneralInfo(){
-    const [data, setData] = useImmer(cvData.generalInformation);
-    const [isEditable, toggleEdit] = useState(false);
-
-    function handleToggling(){
-            toggleEdit(!isEditable);
-        
-    }
-
-    function handleInput(newData, key){
-        setData(draft => {
-            draft[key] = newData;
-        })
-    }
+function GeneralInfo({isEditable, handleToggling, data, handleInputChange}){
     if (isEditable){
         return (
             <form onSubmit={handleToggling}>
@@ -24,9 +8,8 @@ function GeneralInfo(){
                         key={key}
                         objectKey ={key}
                         value= {value}
-                        onUpdate={handleInput}
+                        onUpdate={handleInputChange}
                    />
-                    
                 ))}
                 <button type="submit">Submit</button>
             </form>
