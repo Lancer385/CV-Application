@@ -1,5 +1,7 @@
 import Input from "./inputs";
-function GeneralInfo({isEditable, handleToggling, data, handleInputChange}){
+import View from "./view";
+function GeneralInfo({data, isEditable, handleToggling, handleInputChange}){
+    
     if (isEditable){
         return (
             <form onSubmit={handleToggling}>
@@ -19,11 +21,17 @@ function GeneralInfo({isEditable, handleToggling, data, handleInputChange}){
     else {
         return (
             <>
+                <h1>General Information</h1>
                 {Object.entries(data).map(([key, value]) => (
-                    <h1 key={key}> {key}: {value} </h1>
+                    <View 
+                        key={key}
+                        objectKey={key}
+                        value={value}
+                        handleToggling={handleToggling}
+                    />
                 ))}
-                
                 <button onClick={handleToggling}>Edit</button>
+
             </>
         )
     }

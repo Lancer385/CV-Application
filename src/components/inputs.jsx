@@ -12,7 +12,10 @@ function Input({objectKey, value, onUpdate}){
             break;
     }
     return (
-       <input type={inputType} value={value} onChange={(e) => {onUpdate(e.target.value, objectKey)}} required/>
+        <>
+       <label htmlFor={objectKey}>{objectKey}: </label>
+       <input id={objectKey} type={inputType} value={value} onChange={(e) => {onUpdate(e.target.value, objectKey)}} required/>
+       </>
     )
 }
 
