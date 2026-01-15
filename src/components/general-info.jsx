@@ -1,10 +1,6 @@
 import Form from "./form";
 import View from "./view";
 function GeneralInfo({name, data, isEditable, handleToggling, handleInputChange}){
-        function toggle(){
-        handleToggling(name);
-    }
-
    if (isEditable){
         return (
            <Form 

@@ -6,9 +6,9 @@ function App() {
     const [data, setData] = useImmer(cvData);
     const [isEditable, toggleEdit] = useImmer(
       {
-        generalInformation: true,
-        education: true,
-        practicalExperience: true,
+        generalInformation: false,
+        education: false,
+        practicalExperience: false,
       }
     );
 

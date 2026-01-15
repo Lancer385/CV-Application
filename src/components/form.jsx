@@ -1,7 +1,8 @@
 import Input from "./inputs"
 
 function Form({name, data, handleToggling, handleInputChange}){
-    function toggle(){
+    function toggle(e){
+        e.preventDefault()
         handleToggling(name);
     }
 
