@@ -1,9 +1,7 @@
-function Input({objectKey, value, onUpdate}){
-    let inputType = '';
+import { sentenceCase } from "change-case";
+function Input({name, index, objectKey, value, handleInputChange}){
+    let inputType = 'text';
     switch (objectKey){
-        case 'fullName':
-            inputType = "text";
-            break;
         case 'email':
             inputType = 'email';
             break;
@@ -13,8 +11,8 @@ function Input({objectKey, value, onUpdate}){
     }
     return (
         <>
-       <label htmlFor={objectKey}>{objectKey}: </label>
-       <input id={objectKey} type={inputType} value={value} onChange={(e) => {onUpdate(e.target.value, objectKey)}} required/>
+       <label htmlFor={objectKey}>{sentenceCase(objectKey)}: </label>
+       <input id={objectKey} type={inputType} value={value} onChange={(e) => {handleInputChange(e.target.value, objectKey, name, index)}} required/>
        </>
     )
 }
