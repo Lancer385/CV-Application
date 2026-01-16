@@ -1,3 +1,3 @@
 # Project: CV Application
 
-WIP
+live preview : https://cv-application2.netlify.app/
