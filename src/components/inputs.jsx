@@ -11,8 +11,8 @@ function Input({name, index, objectKey, value, handleInputChange}){
     }
     return (
         <>
-       <label htmlFor={objectKey}>{sentenceCase(objectKey)}: </label>
-       <input id={objectKey} type={inputType} value={value} onChange={(e) => {handleInputChange(e.target.value, objectKey, name, index)}} required/>
+       <label htmlFor={objectKey}>{sentenceCase(objectKey)}</label>
+       <input id={objectKey} type={inputType} value={value} autoComplete="off" onChange={(e) => {handleInputChange(e.target.value, objectKey, name, index)}} required/>
        </>
     )
 }
