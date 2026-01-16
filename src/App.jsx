@@ -18,16 +18,13 @@ function App() {
   return (
     <>
      <h1>My Resume</h1>
-     <Section
-        name= 'generalInformation'
-        data={data.generalInformation}
+     {Object.entries(data).map(([key, value]) => (
+      <Section 
+        name={key}
+        data={value}
         handleInputChange={handleInput}
-     />
-     <Section
-        name= 'education'
-        data={data.education}
-        handleInputChange={handleInput}
-     />
+      />
+     ))}
 
     </>
   )

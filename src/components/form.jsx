@@ -11,9 +11,11 @@ function Form({name, data, handleToggling, handleInputChange}){
         return (
             <>
                 <h2>{sentenceCase(name)}</h2>
-                <form onSubmit={toggle} id={name}>
+                <form onSubmit={toggle} className={name}>
                     {data.map((item, index) => (
-                        Object.entries(item).map(([key, value]) => (
+                    <fieldset>
+                        <legend>info {index + 1}</legend>
+                        {Object.entries(item).map(([key, value]) => (
                             <Input
                                 name={name}
                                 index={index}
@@ -22,9 +24,12 @@ function Form({name, data, handleToggling, handleInputChange}){
                                 value={value}
                                 handleInputChange={handleInputChange}
                             ></Input>
-                        ))
+                        ))}
+                    </fieldset>
                     ))}
+                    <div className="buttons">
                     <button type="submit">Submit</button>
+                    </div>
                 </form>
             </>
         )
