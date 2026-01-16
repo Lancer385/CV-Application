@@ -1,5 +1,5 @@
-import Form from "./form";
-import View from "./view";
+import Form from "./Form";
+import View from "./View";
 import { useState } from "react";
 import { useImmer } from "use-immer";
 

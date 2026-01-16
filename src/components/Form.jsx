@@ -1,4 +1,4 @@
-import Input from "./inputs"
+import Input from "./Input"
 import '../styles/form.css'
 import { sentenceCase } from "change-case";
 

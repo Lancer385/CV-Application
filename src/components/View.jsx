@@ -4,6 +4,7 @@ function View({name, data, handleToggling}){
     function toggle(){
         handleToggling(name)
     }
+    
     if (Array.isArray(data)){
         return (
             <>
