@@ -1,7 +1,9 @@
 import Input from "./inputs"
 import '../styles/form.css'
 import { sentenceCase } from "change-case";
+
 function Form({name, data, handleToggling, handleInputChange}){
+    
     function toggle(e){
         e.preventDefault()
         handleToggling(name);
@@ -17,7 +19,6 @@ function Form({name, data, handleToggling, handleInputChange}){
                         <legend>info {index + 1}</legend>
                         {Object.entries(item).map(([key, value]) => (
                             <Input
-                                name={name}
                                 index={index}
                                 key={key}
                                 objectKey={key}
