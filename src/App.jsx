@@ -8,6 +8,7 @@ function App() {
      {Object.entries(cvData).map(([key, value]) => (
       <Section 
         name={key}
+        key={key}
         cvData={value}
       />
      ))}

@@ -2,7 +2,7 @@ import Input from "./inputs"
 import '../styles/form.css'
 import { sentenceCase } from "change-case";
 
-function Form({name, data, handleToggling, handleInputChange}){
+function Form({name, data, handleToggling, handleInputChange, handleAddingSection}){
     
     function toggle(e){
         e.preventDefault()
@@ -29,7 +29,8 @@ function Form({name, data, handleToggling, handleInputChange}){
                     </fieldset>
                     ))}
                     <div className="buttons">
-                    <button type="submit">Submit</button>
+                        <button>Submit</button>
+                        <button type="button" onClick={handleAddingSection}>Add Section</button>
                     </div>
                 </form>
             </>

@@ -21,6 +21,16 @@ function Section({name, cvData}){
           }
       })
     }
+
+    function handleAddingSection(){
+        setData(draft => {
+            if (draft.length > 0){
+              draft.push(Object.fromEntries(Object.keys(draft[0]).map(key => [key, ''])))
+            }
+        })
+    }
+
+
     
    if (isEditable){
         return (
@@ -30,7 +40,9 @@ function Section({name, cvData}){
            data={data}
            handleToggling={handleToggling}
            handleInputChange={handleInputChange}
+           handleAddingSection={handleAddingSection}
            />
+
            </>
         )
     }
