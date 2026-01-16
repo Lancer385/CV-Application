@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useImmer } from "use-immer";
 
 function Section({name, cvData}){
-    const [isEditable, toggleEdit] = useState(false)
+    const [isEditable, toggleEdit] = useState(true)
     const [data, setData] = useImmer(cvData);
     
     function handleToggling(){

@@ -15,7 +15,7 @@ function Input({index, objectKey, value, handleInputChange}){
     }
     return (
         <>
-       <label htmlFor={objectKey}>{sentenceCase(objectKey)}</label>
+       <label htmlFor={objectKey}>{sentenceCase(objectKey)}: </label>
        <input id={objectKey}
               type={inputType} 
               value={value} 
