@@ -1,16 +1,8 @@
-import GeneralInfo  from "./components/general-info"
-import Education from "./components/education";
+import Section  from "./components/Section"
 import { cvData } from "./utils/cv-data";
 import { useImmer } from "use-immer";
 function App() {
     const [data, setData] = useImmer(cvData);
-    const [isEditable, toggleEdit] = useImmer(
-      {
-        generalInformation: false,
-        education: false,
-        practicalExperience: false,
-      }
-    );
 
     function handleInput(newInput, key, name, index){
       setData(draft => {
@@ -23,24 +15,17 @@ function App() {
       })
     }
 
-    function handleToggling(name){
-        toggleEdit(draft => {draft[name] = !draft[name]});
-    }
   return (
     <>
      <h1>My Resume</h1>
-     <GeneralInfo
+     <Section
         name= 'generalInformation'
         data={data.generalInformation}
-        isEditable={isEditable.generalInformation}
-        handleToggling={handleToggling}
         handleInputChange={handleInput}
      />
-     <Education
+     <Section
         name= 'education'
         data={data.education}
-        isEditable={isEditable.education}
-        handleToggling={handleToggling}
         handleInputChange={handleInput}
      />
 

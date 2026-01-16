@@ -1,7 +1,13 @@
+import { useState } from "react";
 import Form from "./form";
 import View from "./view";
 
-function GeneralInfo({name, data, isEditable, handleToggling, handleInputChange}){
+function Section({name, data, handleInputChange}){
+    const [isEditable, toggleEdit] = useState(false)
+
+    function handleToggling(){
+        toggleEdit(!isEditable)
+    };
    if (isEditable){
         return (
           <>
@@ -28,4 +34,4 @@ function GeneralInfo({name, data, isEditable, handleToggling, handleInputChange}
     }
 }
 
-export default GeneralInfo
+export default Section
