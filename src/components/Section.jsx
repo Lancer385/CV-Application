@@ -30,6 +30,14 @@ function Section({name, cvData}){
         })
     }
 
+    function handleDeletingSection(){
+        setData(draft => {
+            if (draft.length > 1){
+              draft.pop()
+            }
+        })
+    }
+
 
     
    if (isEditable){
@@ -41,6 +49,7 @@ function Section({name, cvData}){
            handleToggling={handleToggling}
            handleInputChange={handleInputChange}
            handleAddingSection={handleAddingSection}
+           handleDeletingSection={handleDeletingSection}
            />
 
            </>

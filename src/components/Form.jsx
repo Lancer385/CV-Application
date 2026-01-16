@@ -2,7 +2,14 @@ import Input from "./Input"
 import '../styles/form.css'
 import { sentenceCase } from "change-case";
 
-function Form({name, data, handleToggling, handleInputChange, handleAddingSection}){
+function Form({
+    name, 
+    data, 
+    handleToggling, 
+    handleInputChange, 
+    handleAddingSection, 
+    handleDeletingSection
+    }){
     
     function toggle(e){
         e.preventDefault()
@@ -15,7 +22,7 @@ function Form({name, data, handleToggling, handleInputChange, handleAddingSectio
                 <h2>{sentenceCase(name)}</h2>
                 <form onSubmit={toggle} className={name}>
                     {data.map((item, index) => (
-                    <fieldset>
+                    <fieldset key={index}>
                         <legend>info {index + 1}</legend>
                         {Object.entries(item).map(([key, value]) => (
                             <Input
@@ -31,6 +38,7 @@ function Form({name, data, handleToggling, handleInputChange, handleAddingSectio
                     <div className="buttons">
                         <button>Submit</button>
                         <button type="button" onClick={handleAddingSection}>Add Section</button>
+                        <button type="button" onClick={handleDeletingSection}>Delete Section</button>
                     </div>
                 </form>
             </>
